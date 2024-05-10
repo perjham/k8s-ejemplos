@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: soporte
+  namespace: default
+spec:
+  containers:
+  - name: soporte
+    image: tanzu-harbor.pngd.gob.pe/servir/commons/soporte:1.0.0-alpine
+    imagePullPolicy: Always
+    # Just spin & wait forever
+    command: [ "/bin/sh", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
